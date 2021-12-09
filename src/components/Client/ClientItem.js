@@ -1,20 +1,24 @@
 import { useState } from 'react';
 import ClientDetails from './ClientDetails';
 
-const ClientItem = () => {
+const ClientItem = (props) => {
 	const [isOpen, setIsOpen] = useState(false);
-
-	const toggle = () => {
-		setIsOpen(!isOpen);
-	};
 
 	return (
 		<div className='item'>
-			<div className='heading' onClick={toggle}>
-				<span>Hardcoded client name</span>
-				<i>+</i>
+			<div className='heading' onClick={() => setIsOpen(!isOpen)}>
+				<span>{props.name}</span>
 			</div>
-			{isOpen && <ClientDetails />}
+			{isOpen && (
+				<ClientDetails
+					id={props.id}
+					name={props.name}
+					address={props.address}
+					city={props.city}
+					zipCode={props.zipCode}
+					countryId={props.countryId}
+				/>
+			)}
 		</div>
 	);
 };

@@ -1,86 +1,87 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LettersSection = () => {
 	return (
 		<div className='alpha'>
 			<ul>
 				<li>
-					<a href='javascript:;'>a</a>
+					<Link to='index.html'>a</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>b</a>
+					<Link to='index.html'>b</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>c</a>
+					<Link to='index.html'>c</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>d</a>
+					<Link to='index.html'>d</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>e</a>
+					<Link to='index.html'>e</Link>
 				</li>
-				<li class='active'>
-					<a href='javascript:;'>f</a>
-				</li>
-				<li>
-					<a href='javascript:;'>g</a>
+				<li className='active'>
+					<Link to='index.html'>f</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>h</a>
+					<Link to='index.html'>g</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>i</a>
+					<Link to='index.html'>h</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>j</a>
+					<Link to='index.html'>i</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>k</a>
+					<Link to='index.html'>j</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>l</a>
-				</li>
-				<li class='disabled'>
-					<a href='javascript:;'>m</a>
+					<Link to='index.html'>k</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>n</a>
+					<Link to='index.html'>l</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>o</a>
+					<Link to='index.html'>m</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>p</a>
+					<Link to='index.html'>n</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>q</a>
+					<Link to='index.html'>o</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>r</a>
+					<Link to='index.html'>p</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>s</a>
+					<Link to='index.html'>q</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>t</a>
+					<Link to='index.html'>r</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>u</a>
+					<Link to='index.html'>s</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>v</a>
+					<Link to='index.html'>t</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>w</a>
+					<Link to='index.html'>u</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>x</a>
+					<Link to='index.html'>v</Link>
 				</li>
 				<li>
-					<a href='javascript:;'>y</a>
+					<Link to='index.html'>w</Link>
+				</li>
+				<li>
+					<Link to='index.html'>x</Link>
+				</li>
+				<li>
+					<Link to='index.html'>y</Link>
 				</li>
 				<li className='last'>
-					<a href='javascript:;'>z</a>
+					<Link to='index.html'>z</Link>
 				</li>
 			</ul>
 		</div>

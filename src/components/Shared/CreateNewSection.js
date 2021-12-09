@@ -1,32 +1,20 @@
-import { useState } from 'react';
-import AddClientModal from '../Client/AddClientModal';
-import Backdrop from './Backdrop';
+import { Link } from 'react-router-dom';
 
-const CreateNewSection = (props) => {
-	const [isOpen, setIsOpen] = useState(false);
-
-	function openModalHandler() {
-		setIsOpen(true);
-	}
-
-	function closeModalHandler() {
-		setIsOpen(false);
-	}
+const CreateNewSection = ({ text, onOpenModal }) => {
 	return (
 		<div className='grey-box-wrap reports'>
-			<a
-				href='#new-member'
+			<Link
+				to='#new-member'
 				className='link new-member-popup'
-				onClick={openModalHandler}
+				onClick={() => {
+					onOpenModal();
+				}}
 			>
-				{props.text}
-			</a>
+				{text}
+			</Link>
 			<div className='search-page'>
 				<input type='search' name='search-clients' className='in-search' />
 			</div>
-
-			{isOpen && <AddClientModal />}
-			{isOpen && <Backdrop onClick={closeModalHandler} />}
 		</div>
 	);
 };

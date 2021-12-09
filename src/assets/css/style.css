@@ -2539,7 +2539,7 @@ select.error {
 .fancybox-ie6 #fancybox-bg-e,
 .fancybox-ie6 #fancybox-left,
 .fancybox-ie6 #fancybox-right,
-#fancybox-hide-sel-frame {
+/* #fancybox-hide-sel-frame {
 	height: expression(this.parentNode.clientHeight + 'px');
 }
 #fancybox-loading.fancybox-ie6 {
@@ -2555,7 +2555,7 @@ select.error {
 							document.documentElement.scrollTop: document.body.scrollTop)
 			) + 'px'
 	);
-}
+} */
 #fancybox-loading.fancybox-ie6 div {
 	background: transparent;
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='fancybox/fancy_loading.png', sizingMethod='scale');
