@@ -20,7 +20,7 @@ const LettersSection = () => {
 				<li>
 					<Link to='index.html'>e</Link>
 				</li>
-				<li className='active'>
+				<li>
 					<Link to='index.html'>f</Link>
 				</li>
 				<li>

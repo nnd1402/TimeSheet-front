@@ -17,6 +17,7 @@ const ClientItem = (props) => {
 					city={props.city}
 					zipCode={props.zipCode}
 					countryId={props.countryId}
+					onClose={() => setIsOpen(false)}
 				/>
 			)}
 		</div>

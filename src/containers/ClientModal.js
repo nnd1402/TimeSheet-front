@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import GetCountries from '../actions/CountryActions/GetCountries';
+//import { fetchCountries } from '../actions/CountryActions/fetchCountries';
 
 const ClientModal = ({ open, onClose }) => {
 	const [name, setName] = useState('');
@@ -7,6 +7,8 @@ const ClientModal = ({ open, onClose }) => {
 	const [city, setCity] = useState('');
 	const [zipCode, setZipcode] = useState('');
 	const [countryId, setCountryId] = useState('');
+
+	const [countries, setCountries] = useState([]);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -26,6 +28,22 @@ const ClientModal = ({ open, onClose }) => {
 			console.log(err.res.data);
 		}
 	};
+
+	useEffect(() => {
+		fetchCountries();
+	}, []);
+
+	async function fetchCountries() {
+		const response = await fetch('http://localhost:5000/api/countries');
+		const fetchedCountries = await response.json(response);
+		setCountries(fetchedCountries);
+	}
+
+	const countryOptions = countries.map((country) => (
+		<option key={country.id} value={country.id}>
+			{country.name}
+		</option>
+	));
 
 	if (!open) return null;
 	return (
@@ -68,7 +86,7 @@ const ClientModal = ({ open, onClose }) => {
 					<li>
 						<label>Select countries:</label>
 						<select onChange={(e) => setCountryId(e.target.value)}>
-							<GetCountries />
+							{countryOptions}
 						</select>
 					</li>
 					<div className='buttons'>

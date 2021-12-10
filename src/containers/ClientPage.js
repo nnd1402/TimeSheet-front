@@ -1,13 +1,25 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CreateNewSection from '../components/Shared/CreateNewSection';
 import LettersSection from '../components/Shared/LettersSection';
 import Pagination from '../components/Shared/Pagination';
 import ClientModal from './ClientModal';
 import Backdrop from '../components/Shared/Backdrop';
-import GetClients from '../actions/ClientActions/GetClients';
+import ClientList from '../components/Client/ClientList';
+//import { fetchClients } from '../actions/ClientActions/fetchClients';
 
 const Client = () => {
 	const [isOpen, setIsOpen] = useState(false);
+	const [clients, setClients] = useState([]);
+
+	useEffect(() => {
+		fetchClients();
+	}, []);
+
+	async function fetchClients() {
+		const response = await fetch('http://localhost:5000/api/clients');
+		const fetchedClients = await response.json(response);
+		setClients(fetchedClients);
+	}
 
 	return (
 		<div className='wrapper'>
@@ -20,7 +32,9 @@ const Client = () => {
 					onOpenModal={() => setIsOpen(true)}
 				/>
 				<LettersSection />
-				<GetClients />
+				<div className='accordion-wrap clients'>
+					<ClientList clients={clients} />
+				</div>
 				<Pagination />
 				<ClientModal open={isOpen} onClose={() => setIsOpen(false)} />
 				{isOpen && <Backdrop close={() => setIsOpen(false)} />}
