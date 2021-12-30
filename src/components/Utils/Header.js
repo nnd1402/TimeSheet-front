@@ -42,7 +42,7 @@ const Header = () => {
 					<nav>
 						<ul className='menu'>
 							<li>
-								<NavLink to='index.html' className='btn nav'>
+								<NavLink to='timesheet' className='btn nav'>
 									TimeSheet
 								</NavLink>
 							</li>
@@ -52,22 +52,17 @@ const Header = () => {
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to='projects.html' className='btn nav'>
+								<NavLink to='projects' className='btn nav'>
 									Projects
 								</NavLink>
 							</li>
 							<li>
-								<NavLink to='categories.html' className='btn nav'>
-									Categories
-								</NavLink>
-							</li>
-							<li>
-								<NavLink to='team-members.html' className='btn nav'>
+								<NavLink to='team-members' className='btn nav'>
 									Team members
 								</NavLink>
 							</li>
 							<li className='last'>
-								<NavLink to='reports.html' className='btn nav'>
+								<NavLink to='reports' className='btn nav'>
 									Reports
 								</NavLink>
 							</li>
